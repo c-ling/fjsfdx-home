@@ -1,0 +1,52 @@
+@fontFamily:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+@fontSizeLarge: 20px;
+@fontSizeNormal: 18px;
+@fontSizeMiddle: 16px;
+@fontSizeSmall: 14px;
+
+@borderRadius: 5px;
+
+@baseSkyBlue: #5BA8F8;
+@baseBlue: #0480FF;
+@baseRed: #f58070;
+@baseLightGray: #F2F5F8;
+@baseGray: #AEAFB1;
+@baseDarkGray: #333;
+
+// mixin
+.card() {
+	width: 100%;
+  background-color: #fff;
+	box-shadow: 0 1px 6px 0 rgba(214,218,222,0.41);
+}
+
+.text-overflow() {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.multi-text-overflow(@line: 3, @font-size: @fontSizeSmall, @line-height: 1.5) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: @line;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: @font-size;
+	line-height: @line-height;
+	max-height: @line-height * @line * @font-size;
+}
+
+.font-size-12(@transform-origin: center center, @font-size: @fontSizeSmall) {
+	display: inline-block;
+	font-size: @font-size;
+	transform: scale(.85);
+	transform-origin: @transform-origin;
+}
+
+.flex-col(@justify-content: space-around, @align-items: normal) {
+	display: flex;
+	flex-direction: column;
+	justify-content: @justify-content;
+	align-items: @align-items;
+}
